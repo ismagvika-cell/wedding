@@ -496,14 +496,7 @@
     if(note) lines.push('Комментарий: ' + note);
     const text = lines.join('\n');
 
-    if(TELEGRAM_BOT_TOKEN.indexOf('8678100938:AAHJJxP5B_5Gmx_va68F9RR-TMNnkxvfIkM') !== -1){
-      msg.textContent = 'Форма пока не настроена (нет токена бота). Ответ не отправлен.';
-      msg.className = 'formmsg error';
-      btn.disabled = false;
-      btn.textContent = 'Отправить ответ';
-      return;
-    }
-
+   
     try{
       const url = 'https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage';
       const resp = await fetch(url, {
